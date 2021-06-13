@@ -1,0 +1,42 @@
+<div class="container-fluid ">
+  <div class="jumbotron">
+    <div class="card ">
+  
+      <div class="card-header">
+        <select class="form-control" [(ngModel)]= "selectedOrganization" (ngModelChange)="onChange($event)">
+          <option *ngFor= "let organization of organizationArray" [value]="organization.organization_id">{{organization.name}}</option>
+        </select>
+      </div>
+
+
+<table class="table" >
+  <thead >
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">ORGANIZATION ID</th>
+      <th scope="col">USER ID</th>
+      <th scope="col">PROJECT NAME</th>
+      <th scope="col">CREATED AT</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let project of pageSlice">
+    <tr>
+      <td>{{project.id }}</td>
+      <td>{{project.organization_id }}</td>
+      <td>{{project.user_id }}</td>
+      <td>{{project.name }}</td>
+      <td>{{project.created_at }}</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+      
+      
+    </div>
+    <mat-paginator [length]="this.projectArray.length" [pageSize]="5" [pageSizeOptions]="[5,10,20]" (page)="OnPageChange($event)"></mat-paginator>
+      
+  </div>
+</div>
