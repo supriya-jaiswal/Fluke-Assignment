@@ -1,5 +1,6 @@
 # Fluke-Assignment
+Run below commands:
 
-Run npm install 
-Run ng serve
-open application on local host 4200.
+npm install, 
+ng serve
+
